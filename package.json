@@ -1,5 +1,5 @@
 {
-	"name": "react-control-flow",
+	"name": "control-flow-react",
 	"version": "1.0.0",
 	"description": "Control flow components for React",
 	"main": "./dist/cjs/index.js",
