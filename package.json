@@ -1,0 +1,39 @@
+{
+	"name": "react-control-flow",
+	"version": "1.0.0",
+	"description": "Control flow components for React",
+	"main": "./dist/cjs/index.js",
+	"module": "./dist/esm/index.js",
+	"types": "./dist/esm/index.d.ts",
+	"scripts": {
+		"build:esm": "tsc",
+		"build:cjs": "tsc --module commonjs --outDir dist/cjs",
+		"build": "npm build:esm && npm build:cjs",
+		"prepare": "npm run build"
+	},
+	"files": [
+		"*.md",
+		"dist"
+	],
+	"keywords": [
+		"react-control-flow",
+		"control-flow",
+		"react",
+		"solid-flow"
+	],
+	"author": "Maneesh K (manu2699)",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/manu2699/react-control-flow.git"
+	},
+	"peerDependencies": {
+		"react": ">=16"
+	},
+	"devDependencies": {
+		"@types/react": "^18.0.28",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"typescript": "^4.9.5"
+	}
+}

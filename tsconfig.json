@@ -1,0 +1,16 @@
+{
+	"compilerOptions": {
+		"esModuleInterop": true,
+		"jsx": "react",
+		"module": "esnext",
+		"moduleResolution": "node",
+		"lib": ["dom", "esnext"],
+		"strict": true,
+		"declaration": true,
+		"sourceMap": true,
+		"rootDir": "./src",
+		"outDir": "./dist/esm",
+	},
+	"include": ["src"],
+	"exclude": ["node_modules", "dist"]
+}
