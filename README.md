@@ -7,14 +7,14 @@ Has essential controls flows like If, Switch Cases for conditions and For as an 
 ## Installation
 
 ```sh
-npm install react-control-flow
+npm install control-flow-react
 ```
 
 ## Iterative control components
 
 ### For
 ```jsx
-import { For } from "react-control-flow";
+import { For } from "control-flow-react";
 let worldCups = [
 	{ name: "Argentina", trophies: 3 },
 	{ name: "France", trophies: 2 },
@@ -36,7 +36,7 @@ return (
 ### If
 
 ```jsx
-import { If } from "react-control-flow";
+import { If } from "control-flow-react";
 
 <If when={loggedIn} fallBack={<Button>LogIn</Button>}>
     <Button>Logout</Button>
@@ -45,7 +45,7 @@ import { If } from "react-control-flow";
 
 ### Switch
 ```jsx
-import { Switch, Case } from "react-control-flow";
+import { Switch, Case } from "control-flow-react";
 
 return (
 	<Switch when={status} fallBack={<div>Default Component</div>}>
