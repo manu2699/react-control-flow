@@ -6,7 +6,11 @@ interface iForProps {
 	children: (item: any, index: number) => any;
 	emptyState?: ReactNode | string | null;
 }
-export const For = ({ each, children, emptyState = null }: iForProps) => {
+export const For = ({
+	each,
+	children,
+	emptyState = null
+}: iForProps): ReactNode | null => {
 	return (
 		<>
 			{each && Array.isArray(each) && each.length > 0

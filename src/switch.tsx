@@ -9,7 +9,7 @@ interface iSwitchProps {
 	fallBack: string | ReactNode | null;
 }
 
-export const Switch = (props: iSwitchProps) => {
+export const Switch = (props: iSwitchProps): ReactNode | null => {
 	const { when, children, fallBack = null } = props;
 	const cases = React.Children.toArray(children).filter(
 		(child) => React.isValidElement(child) && child.type === Case
@@ -28,4 +28,6 @@ interface iCaseProps {
 	values?: iConditionClause[];
 }
 
-export const Case = ({ children }: iCaseProps) => <>{children}</>;
+export const Case = ({ children }: iCaseProps): ReactNode | null => (
+	<>{children}</>
+);

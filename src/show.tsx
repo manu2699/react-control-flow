@@ -3,11 +3,15 @@ import type { ReactNode } from "react";
 
 import { iConditionClause } from "./switch";
 
-interface iIfProps {
+interface iShowProps {
 	when: iConditionClause;
 	children: ReactNode | string | null;
 	fallBack: ReactNode | string | null;
 }
-export const If = ({ when, children, fallBack = null }: iIfProps) => {
+export const Show = ({
+	when,
+	children,
+	fallBack = null
+}: iShowProps): ReactNode | null => {
 	return <>{when ? children : fallBack}</>;
 };
