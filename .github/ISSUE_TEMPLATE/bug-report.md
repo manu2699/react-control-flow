@@ -1,25 +1,24 @@
 ---
 name: Bug report
 about: Create a report to help us improve
-title: ''
+title: '🐛 [Bug] : '
 labels: bug
-assignees: manu2699
+assignees: ''
 
 ---
 
 **Describe the issue**
-A clear and concise description of what the issue/bug is.
+<!-- A clear and concise description of what the issue/bug is. -->
+
 
 **To Reproduce**
-Steps to reproduce the behavior:
-1.
-2.
+<!-- Steps to reproduce the behavior: -->
+<!-- 1. -->
+<!-- 2. -->
 
-** Error logs **
-Provide Error logs, if any
-
-**Screenshots**
-If applicable, add screenshots to help explain your problem.
+**Error logs**
+<!-- Provide Error logs, if any -->
 
 **Additional context**
-Add any other context about the problem here.
+<!-- Add any other context about the problem here. -->
+
