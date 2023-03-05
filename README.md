@@ -1,23 +1,27 @@
 # Control Flow React
 
-Minimal control flow components for React inspired by
-[Solid.js](https://www.solidjs.com/tutorial/flow_show) <br> 
-Has essential controls flows like 
-- [For](#for)
-- [Show](#show)
-- [Switch](#switch)
+Control Flow React is a lightweight package that provides minimal control flow components for React. These components are inspired by [Solid.js](https://www.solidjs.com/tutorial/flow_show) are designed to help developers refactor code in a declarative format that is more cleaner and easier to read or review.
+
+#### Differences
+![Screenshot 2023-03-05 at 1 59 43 PM](https://user-images.githubusercontent.com/34669116/222950168-36be9d0b-6a30-4687-a1c4-5177e0034541.png)
 
 
 ## Installation
+
 ```sh
 npm install control-flow-react
 ```
+
 ## Iterative control components
+
 ### For
-Iterates the array provided in `each` prop and renders the `children` function.
-If the array is found to be empty or falsy then `fallBack` is rendered.
-> Note: 'children' will be a function what receives in each iteration item and index <br>
-> eg: `(item, index) => <div> {index} - {item </div>`
+
+Iterates over an array provided in `each` prop and renders the `children` function.
+If the array is empty or falsy, then the `fallBack` prop is rendered.
+
+> Note: 'children' will be a function that receives in each iteration item and
+> index <br> eg: `(item, index) => <div> {index} - {item </div>`
+
 ```jsx
 import { For } from "control-flow-react";
 let stats = [
@@ -35,18 +39,23 @@ return (
 	</For>
 );
 ```
+
 ```tsx
 interface iForProps {
-    each: any[] | undefined | null;
-    children: (item: any, index: number) => any;
-    emptyState?: ReactNode | string | null;
+	each: any[] | undefined | null;
+	children: (item: any, index: number) => any;
+	emptyState?: ReactNode | string | null;
 }
-export declare const For: ({ each, children, emptyState }: iForProps) => ReactNode | null;
+const For: ({ each, children, emptyState }: iForProps) => ReactNode | null;
 ```
 
 ## Conditional control components
+
 ### Show
-Conditionally render `children` or `fallBack` based on condition provided to `when`.
+
+Conditionally renders `children` or `fallBack` based on condition provided to
+`when` prop.
+
 ```jsx
 import { Show } from "control-flow-react";
 
@@ -57,23 +66,29 @@ return (
 	</Show>
 );
 ```
+
 ```tsx
 interface iShowProps {
     when: boolean | number | string | any | undefined;;
     children: ReactNode | string | null;
-    fallBack: ReactNode | string | null;
+    fallBack?: ReactNode | string | null;
 }
-export declare const Show: ({ when, children, fallBack }: iShowProps) => ReactNode | null;
+const Show: ({ when, children, fallBack }: iShowProps) => ReactNode | null;
 ```
+
 ### Switch
-Renders first matching `<Case>` if its props _**value**_ or _**values**_ matches with condition provided in _**when**_ prop to `<Switch>` and if none of them matches `fallBack` will be rendered.
-> Note: Pass an array to _***values***_ props in `<Case>` to match any one among them. <br>
-> `<Case>` should be direct child for `<Switch>`
+
+Renders first matching `<Case>` if its props _**value**_ or _**values**_ matches
+with condition provided in _**when**_ prop to `<Switch>` component and if none of them
+matches _**fallBack**_ will be rendered.
+
+> Note: Pass an array to _***values***_ props in `<Case>` to match any one among
+> them. <br> > `<Case>` should be direct child for `<Switch>`
 
 ```jsx
 import { Switch, Case } from "control-flow-react";
 
-let { status, err } = await fetch(url).catch()
+let { status, err } = await fetch(url).catch();
 return (
 	<Switch when={status} fallBack={<div>Default Component</div>}>
 		<Case value={"LoggedIn"}>
@@ -89,18 +104,19 @@ return (
 	</Switch>
 );
 ```
+
 ```tsx
 type ConditionClause = boolean | number | string | any | undefined;
 interface iSwitchProps {
-    when?: ConditionClause;
-    children: ReactNode;
-    fallBack: string | ReactNode | null;
+	when: ConditionClause;
+	children: ReactNode;
+	fallBack: string | ReactNode | null;
 }
-export declare const Switch: (props: iSwitchProps) => ReactNode | null;
+const Switch: (props: iSwitchProps) => ReactNode | null;
 interface iCaseProps {
-    children: ReactNode;
-    value?: ConditionClause;
-    values?: ConditionClause[];
+	children: ReactNode;
+	value: ConditionClause;
+	values?: ConditionClause[];
 }
-export declare const Case: ({ children }: iCaseProps) => ReactNode | null;
+const Case: ({ children }: iCaseProps) => ReactNode | null;
 ```
