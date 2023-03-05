@@ -2,7 +2,17 @@
 
 Control Flow React is a lightweight package that provides minimal control flow components for React. These components are inspired by [Solid.js](https://www.solidjs.com/tutorial/flow_show) are designed to help developers refactor code in a declarative format that is more cleaner and easier to read or review.
 
-#### Differences
+### Contents
+- [Difference](#differences)
+- [Installation](#installation)
+- [Iteratives](#iteratives)
+	- [For](#for)
+- [Conditional](#conditionals)
+	- [Show](#show)
+	- [Switch](#switch)
+
+
+### Differences
 ![Screenshot 2023-03-05 at 1 59 43 PM](https://user-images.githubusercontent.com/34669116/222950168-36be9d0b-6a30-4687-a1c4-5177e0034541.png)
 
 
@@ -12,7 +22,7 @@ Control Flow React is a lightweight package that provides minimal control flow c
 npm install control-flow-react
 ```
 
-## Iterative control components
+## Iteratives
 
 ### For
 
@@ -49,7 +59,7 @@ interface iForProps {
 const For: ({ each, children, emptyState }: iForProps) => ReactNode | null;
 ```
 
-## Conditional control components
+## Conditionals
 
 ### Show
 
