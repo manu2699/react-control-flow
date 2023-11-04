@@ -30,7 +30,7 @@ Iterates over an array provided in `each` prop and renders the `children` functi
 If the array is empty or falsy, then the `fallBack` prop is rendered.
 
 > Note: 'children' will be a function that receives in each iteration item and
-> index <br> eg: `(item, index) => <div> {index} - {item </div>`
+> index and the source array that was sent <br> eg: `(item, index) => <div> {index} - {item} </div>`
 
 ```jsx
 import { For } from "control-flow-react";
@@ -41,9 +41,10 @@ let stats = [
 ];
 return (
 	<For each={stats}>
-		{(country, index) => (
+		{(country, index, allStats) => (
 			<div>
-				{index + 1} - {country.name} - {country.trophies}
+				{index + 1} - {country.name} - has won {country.trophies} trophies 
+				- from the total list of countries - {allStats.length}
 			</div>
 		)}
 	</For>
@@ -53,7 +54,7 @@ return (
 ```tsx
 interface iForProps {
 	each: any[] | undefined | null;
-	children: (item: any, index: number) => any;
+	children: (item: any, index: number, sourceArray: any[]) => any;
 	emptyState?: ReactNode | string | null;
 }
 const For: ({ each, children, emptyState }: iForProps) => ReactNode | null;
