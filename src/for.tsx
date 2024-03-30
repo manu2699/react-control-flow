@@ -1,20 +1,20 @@
 import React from "react";
 import type { ReactNode } from "react";
 
-interface iForProps {
-	each: any[] | undefined | null;
-	children: (item: any, index: number) => any;
+interface iForProps<T> {
+	each: T[] | undefined | null;
+	children: (item: T, index: number) => any;
 	emptyState?: ReactNode | string | null;
 }
-export const For = ({
+export const For = <T,> ({
 	each,
 	children,
 	emptyState = null
-}: iForProps): ReactNode | null => {
+}: iForProps<T>): ReactNode | null => {
 	return (
 		<>
 			{each && Array.isArray(each) && each.length > 0
-				? each.map((item: any, index: number) => children(item, index))
+				? each.map((item: T, index: number) => children(item, index))
 				: emptyState}
 		</>
 	);
